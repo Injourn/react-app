@@ -11,13 +11,22 @@ class Counter extends Component {
         fontWeight: 'bold'
     };*/
 
+    constructor(){
+        super();
+        this.handleIncrement = this.handleIncrement.bind(this);
+    }
+
+    handleIncrement(){
+        console.log('Increment Clicked');
+    }
+
     render() {     
         return (
             <React.Fragment>                    
                 <span className="badge badge-primary m-2">
                     {this.formatCount()}
                 </span>
-                <button className="btn btn-secondary btn-sm">Increment</button>
+                <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
             </React.Fragment>);
     }
     formatCount(){

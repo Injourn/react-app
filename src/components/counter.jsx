@@ -5,20 +5,21 @@ class Counter extends Component {
         count: 0,
     };
 
-    /*styles = {
-        fontSize: 50,
-        fontWeight: 'bold'
-    };*/
-
-    render() {     
+    render() {        
         return (
             <React.Fragment>                    
-                <span className="badge badge-primary m-2">
+                <span className={this.getCounterClasses()}>
                     {this.formatCount()}
                 </span>
                 <button className="btn btn-secondary btn-sm">Increment</button>
             </React.Fragment>);
     }
+    getCounterClasses() {
+        let classes = "badge m-2 badge-";
+        classes += (this.state.count === 0 ? "warning" : "primary");
+        return classes;
+    }
+
     formatCount(){
         const {count} = this.state;
         return count === 0 ? "Zero" : count;

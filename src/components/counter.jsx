@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state = {
-        count: 0,
-        tags: ['tag1','tag2','tag3']
+        count: 0
     };
 
     /*styles = {
@@ -17,7 +16,7 @@ class Counter extends Component {
     }*/
 
     handleIncrement = () =>{
-        console.log('Increment Clicked');
+        this.setState({count: this.state.count + 1});
     }
 
     render() {     

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state = {
-        count: 0
+        value: this.props.value
     };
 
     /*styles = {
@@ -17,7 +17,7 @@ class Counter extends Component {
 
     handleIncrement = product =>{
         console.log(product);
-        this.setState({count: this.state.count + 1});
+        this.setState({value: this.state.value + 1});
     };
 
     render() {     
@@ -30,7 +30,7 @@ class Counter extends Component {
             </div>);
     }
     formatCount(){
-        const {count} = this.state;
+        const {value: count} = this.state;
         return count === 0 ? "Zero" : count;
     }
 }
